@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"inunua.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.coderin.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="sleuth是一个链路追踪工具，通过它在日志中打印的信息可以分析出一个服务的调用链条，也可以得出链条中每个服务的耗时，这为我们在实际生产中，分析超时服务，分析服务调用关系，做服务治理提供帮助。第一次使用sleuth，虽说跟着网上的教程也可以运行出正确的结果，但是对于原理、更进一步的使用还是一头蒙。我就尝试着分析一下源代码，其代码量并不大，但是代码还真是难懂，看了一段时间源码，并从网上找了资料，只是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud Sleuth原理浅析">
-<meta property="og:url" content="https://inunua.github.io/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/index.html">
+<meta property="og:url" content="https://www.coderin.top/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/index.html">
 <meta property="og:site_name" content="八月的狮子丶的博客">
 <meta property="og:description" content="sleuth是一个链路追踪工具，通过它在日志中打印的信息可以分析出一个服务的调用链条，也可以得出链条中每个服务的耗时，这为我们在实际生产中，分析超时服务，分析服务调用关系，做服务治理提供帮助。第一次使用sleuth，虽说跟着网上的教程也可以运行出正确的结果，但是对于原理、更进一步的使用还是一头蒙。我就尝试着分析一下源代码，其代码量并不大，但是代码还真是难懂，看了一段时间源码，并从网上找了资料，只是">
 <meta property="og:locale" content="zh_CN">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="转载">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://inunua.github.io/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/">
+<link rel="canonical" href="https://www.coderin.top/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/">
 
 
 <script id="page-configurations">
@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inunua.github.io/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/">
+    <link itemprop="mainEntityOfPage" href="https://www.coderin.top/2021/08/17/Spring-Cloud-Sleuth%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
