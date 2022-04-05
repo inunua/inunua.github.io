@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"www.coderin.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="八月的狮子丶的博客">
-<meta property="og:url" content="https://www.coderin.top/404.html">
+  <meta name="description" content="点击劫持漏洞(ClickJacking)点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点击劫持漏洞(ClickJacking)">
+<meta property="og:url" content="https://www.coderin.top/2021/12/30/%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E-ClickJacking/index.html">
 <meta property="og:site_name" content="八月的狮子丶的博客">
+<meta property="og:description" content="点击劫持漏洞(ClickJacking)点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-05T15:57:28.022Z">
-<meta property="article:modified_time" content="2021-02-25T15:02:33.848Z">
+<meta property="article:published_time" content="2021-12-29T16:47:48.000Z">
+<meta property="article:modified_time" content="2022-04-05T17:26:17.855Z">
 <meta property="article:author" content="八月的狮子丶">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.coderin.top/404">
+<link rel="canonical" href="https://www.coderin.top/2021/12/30/%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E-ClickJacking/">
 
 
 <script id="page-configurations">
@@ -38,13 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title> | 八月的狮子丶的博客
-</title>
+  <title>点击劫持漏洞(ClickJacking) | 八月的狮子丶的博客</title>
   
 
 
@@ -146,43 +147,147 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.coderin.top/2021/12/30/%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E-ClickJacking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="八月的狮子丶">
+      <meta itemprop="description" content="一个人静静坐在电脑面前写代码的感觉，那是什么感觉？那是武林高手闭关修炼的感觉。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八月的狮子丶的博客">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          点击劫持漏洞(ClickJacking)
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<div class="post-meta">
+              <time title="创建时间：2021-12-30 00:47:48" itemprop="dateCreated datePublished" datetime="2021-12-30T00:47:48+08:00">2021-12-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-06 01:26:17" itemprop="dateModified" datetime="2022-04-06T01:26:17+08:00">2022-04-06</time>
+              </span>
+
+          
+            <span id="/2021/12/30/%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E-ClickJacking/" class="post-meta-item leancloud_visitors" data-flag-title="点击劫持漏洞(ClickJacking)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>983</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="点击劫持漏洞-ClickJacking"><a href="#点击劫持漏洞-ClickJacking" class="headerlink" title="点击劫持漏洞(ClickJacking)"></a>点击劫持漏洞(ClickJacking)</h1><p>点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；</p>
+<span id="more"></span>
+
+<h2 id="修复方式"><a href="#修复方式" class="headerlink" title="修复方式"></a>修复方式</h2><p>本文介绍nginx分别通过http和server设置 X-Frame-Options ，防止网站被别人用iframe嵌入使用。需要说明的是，只需用其中一个方法即可，在http配置代码块或server配置代码块里设置。</p>
+<ul>
+<li>在http配置里设置X-Frame-Options</li>
+<li>在server配置里设置X-Frame-Options</li>
+</ul>
+<h3 id="在http配置里设置X-Frame-Options"><a href="#在http配置里设置X-Frame-Options" class="headerlink" title="在http配置里设置X-Frame-Options"></a>在http配置里设置X-Frame-Options</h3><p>然后在http配置代码块里某一行添加如下语句即可：</p>
+<ul>
+<li>add_header X-Frame-Options SAMEORIGIN;</li>
+</ul>
+<p>添加后，重启nginx，即可生效。命令是：</p>
+<ul>
+<li>nginx -s reload</li>
+</ul>
+<h3 id="在server配置里设置X-Frame-Options"><a href="#在server配置里设置X-Frame-Options" class="headerlink" title="在server配置里设置X-Frame-Options"></a>在server配置里设置X-Frame-Options</h3><p>在server配置里设置X-Frame-Options跟在http配置里设置X-Frame-Options方法是一样的，同样是在server的配置代码块里添加如下语句即可：</p>
+<ul>
+<li>add_header X-Frame-Options SAMEORIGIN;</li>
+</ul>
+<p>添加后，重启nginx，即可生效。命令是：</p>
+<ul>
+<li>nginx -s reload</li>
+</ul>
+<h2 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a>知识扩展</h2><h3 id="X-Frame-Options-响应头"><a href="#X-Frame-Options-响应头" class="headerlink" title="X-Frame-Options 响应头"></a>X-Frame-Options 响应头</h3><p>X-Frame-Options HTTP 响应头是用来给浏览器指示允许一个页面可否在 , 或者 中展现的标记。网站可以使用此功能，来确保自己网站的内容没有被嵌到别人的网站中去，也从而避免了点击劫持 (clickjacking) 的攻击。<br><strong>X-Frame-Options 有三个值:</strong></p>
+<ul>
+<li>DENY</li>
+</ul>
+<p>表示该页面不允许在 frame 中展示，即便是在相同域名的页面中嵌套也不允许。</p>
+<ul>
+<li>SAMEORIGIN</li>
+</ul>
+<p>表示该页面可以在相同域名页面的 frame 中展示。</p>
+<ul>
+<li>ALLOW-FROM uri</li>
+</ul>
+<p>表示该页面可以在指定来源的 frame 中展示。</p>
+<p>换一句话说，如果设置为 DENY，不光在别人的网站 frame 嵌入时会无法加载，在同域名页面中同样会无法加载。另一方面，如果设置为 SAMEORIGIN，那么页面就可以在同域名页面的 frame 中嵌套。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/29/%E4%BA%86%E8%A7%A3TLS%E5%8D%8F%E8%AE%AE/" rel="prev" title="了解TLS协议">
+      <i class="fa fa-chevron-left"></i> 了解TLS协议
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/06/%E4%BD%BF%E7%94%A8PicGo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A%E5%B7%A5%E5%85%B7/" rel="next" title="使用PicGo + GitHub搭建个人图床工具">
+      使用PicGo + GitHub搭建个人图床工具 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homePageUrl="/" homePageName="回到我的主页"></script>
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -233,6 +338,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E-ClickJacking"><span class="nav-number">1.</span> <span class="nav-text">点击劫持漏洞(ClickJacking)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E5%A4%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">修复方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8http%E9%85%8D%E7%BD%AE%E9%87%8C%E8%AE%BE%E7%BD%AEX-Frame-Options"><span class="nav-number">1.1.1.</span> <span class="nav-text">在http配置里设置X-Frame-Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8server%E9%85%8D%E7%BD%AE%E9%87%8C%E8%AE%BE%E7%BD%AEX-Frame-Options"><span class="nav-number">1.1.2.</span> <span class="nav-text">在server配置里设置X-Frame-Options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%89%A9%E5%B1%95"><span class="nav-number">1.2.</span> <span class="nav-text">知识扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Frame-Options-%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="nav-number">1.2.1.</span> <span class="nav-text">X-Frame-Options 响应头</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
